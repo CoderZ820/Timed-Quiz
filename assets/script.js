@@ -9,6 +9,10 @@ const infoBox = document.getElementById('info_box')
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click' , () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 function startGame() {
     console.log('Started')
@@ -53,6 +57,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    nextButton.classList.remove('hide')
 }
 
 function setStatusClass(element, correct) {

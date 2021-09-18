@@ -36,6 +36,10 @@ body.wrong {
     box-shadow: 0 0 10px 2px;
 }
 
+#question {
+    text-align: center;
+}
+
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
