@@ -81,3 +81,7 @@ body.wrong {
 .hide {
     display: none;
 }
+
+#info_box {
+    text-align: center;
+}

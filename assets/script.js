@@ -4,6 +4,7 @@ const questionContainerElement = document.getElementById
 ('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const infoBox = document.getElementById('info_box')
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -12,6 +13,7 @@ startButton.addEventListener('click', startGame)
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
+    infoBox.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -44,10 +46,29 @@ function resetState() {
         (answerButtonsElement.firstChild)
     }
 }
-function selectAnswer() {
-
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
 }
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    }  else {
+        element.classList.add('wrong')
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+
+}
 const questions = [
     {
         question: 'What is the general purpose for JavaScript?',
