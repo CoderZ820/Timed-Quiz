@@ -9,6 +9,21 @@
     <script defer src="C:\Users\anima\Desktop\projects\Timed-Quiz\assets\script.js"></script>
 </head>
 <body>
+    <!--Rules to the Quiz-->
+    <div class="info_box">
+        <div class="info_title">
+            <span>The rules to the Quiz</span>
+        </div>
+        <div class="info_list">
+            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div> 
+            <div class="info">2. Once you select your answer, you can't reselect.</div>
+            <div class="info">3. You can't select any option once the timer goes off.</div>
+            <div class="info">4. You can't exit the quiz once you begin.</div>
+            <div class="info">5. You'll get points for every correct answer.</div>
+            <div class="info">6. I hope you enjoy the quiz!</div>
+        </div>
+    </div>
+    <!--The Quiz Container-->
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
@@ -19,6 +34,7 @@
                 <button class="btn">Answer 4</button>
             </div>
         </div>
+    <!--Start and Next buttons-->
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
