@@ -89,3 +89,10 @@ body.wrong {
 #info_box {
     text-align: center;
 }
+
+#question-container #timer {
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
